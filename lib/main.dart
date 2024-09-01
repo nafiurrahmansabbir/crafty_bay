@@ -21,8 +21,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Welcome to Cragty Bay'),
+      body: Center(
+        child: Text('Welcome to Cragty Bay'),
+      ),
     );
   }
 }
-
