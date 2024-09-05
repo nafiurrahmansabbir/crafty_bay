@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../controller/countdown_controller.dart';
+
 class OTPVerificationScreen extends StatefulWidget {
   const OTPVerificationScreen({super.key});
 
@@ -15,6 +17,9 @@ class OTPVerificationScreen extends StatefulWidget {
 class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
   final TextEditingController _oTPTeController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final CountdownController countdownController =
+      Get.put(CountdownController());
 
   @override
   Widget build(BuildContext context) {
@@ -72,20 +77,21 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                   child: const Text('Next'),
                 ),
                 const SizedBox(height: 16),
-                RichText(
-                    text: TextSpan(
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                            ?.copyWith(color: Colors.grey),
-                        text: 'This code will expire in ',
-                        children: const [
-                      TextSpan(
-                          text: '120s',
-                          style: TextStyle(
-                            color: AppColors.themeColor,
-                          ))
-                    ])),
+                Obx(() => RichText(
+                        text: TextSpan(
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge
+                                ?.copyWith(color: Colors.grey),
+                            text: 'This code will expire in ',
+                            children: [
+                          TextSpan(
+                              text:
+                                  '${countdownController.remainingSeconds.value}s',
+                              style: TextStyle(
+                                color: AppColors.themeColor,
+                              ))
+                        ]))),
                 TextButton(onPressed: () {}, child: const Text('Resend Code'))
               ],
             ),
@@ -95,9 +101,9 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     );
   }
 
-  void _onTapCompleteProfileScreen(){
-    if(mounted){
-      Get.to(()=>const CompleteProfileScreen());
+  void _onTapCompleteProfileScreen() {
+    if (mounted) {
+      Get.to(() => const CompleteProfileScreen());
     }
   }
 

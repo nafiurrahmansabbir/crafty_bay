@@ -1,4 +1,5 @@
 
+import 'package:crafty_bay/presentation/ui/screens/otp_verification_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/splash_screen.dart';
 import 'package:crafty_bay/presentation/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class CraftyApp extends StatelessWidget {
     // OTPVerificationScreen
     // SplashScreen()
     return GetMaterialApp(
-      home: const SplashScreen(),
+      home: const OTPVerificationScreen(),
       theme: ThemeData(
         colorSchemeSeed: AppColors.themeColor,
         progressIndicatorTheme: const ProgressIndicatorThemeData(
