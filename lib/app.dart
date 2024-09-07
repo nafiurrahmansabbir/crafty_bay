@@ -13,7 +13,8 @@ class CraftyApp extends StatelessWidget {
     // OTPVerificationScreen
     // SplashScreen()
     return GetMaterialApp(
-      home: const OTPVerificationScreen(),
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
       theme: ThemeData(
         colorSchemeSeed: AppColors.themeColor,
         progressIndicatorTheme: const ProgressIndicatorThemeData(
@@ -27,6 +28,9 @@ class CraftyApp extends StatelessWidget {
             enabledBorder: _outlineInputBorder(),
             focusedBorder: _outlineInputBorder(),
             errorBorder: _outlineInputBorder(Colors.red),
+            hintStyle: const TextStyle(
+              fontWeight: FontWeight.w400
+            ),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 6)),
         elevatedButtonTheme: ElevatedButtonThemeData(
