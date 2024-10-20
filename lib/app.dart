@@ -1,5 +1,4 @@
 
-import 'package:crafty_bay/presentation/ui/screens/otp_verification_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/splash_screen.dart';
 import 'package:crafty_bay/presentation/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -28,9 +27,7 @@ class CraftyApp extends StatelessWidget {
             enabledBorder: _outlineInputBorder(),
             focusedBorder: _outlineInputBorder(),
             errorBorder: _outlineInputBorder(Colors.red),
-            hintStyle: const TextStyle(
-              fontWeight: FontWeight.w400
-            ),
+            hintStyle: const TextStyle(fontWeight: FontWeight.w400),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 6)),
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -50,19 +47,22 @@ class CraftyApp extends StatelessWidget {
           ),
         ),
         textButtonTheme: TextButtonThemeData(
-
-          style: TextButton.styleFrom(
-            foregroundColor: AppColors.themeColor
-          )
-        )
+            style: TextButton.styleFrom(foregroundColor: AppColors.themeColor)),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+            color: Colors.black54,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
     );
   }
 
   OutlineInputBorder _outlineInputBorder([Color? color]) {
     return OutlineInputBorder(
-        borderSide:
-            BorderSide(color: color ?? AppColors.themeColor, width: 1),
+        borderSide: BorderSide(color: color ?? AppColors.themeColor, width: 1),
         borderRadius: BorderRadius.circular(8));
   }
 }

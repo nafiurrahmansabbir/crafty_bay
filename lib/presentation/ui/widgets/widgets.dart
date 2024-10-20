@@ -9,4 +9,5 @@ export 'home/horizontal_product_listview.dart';
 export 'home/product_card.dart';
 export 'home/search_textfield.dart';
 export 'home/section_header.dart';
+export 'category_card.dart';
 

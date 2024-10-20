@@ -1,6 +1,12 @@
+import 'package:crafty_bay/presentation/ui/screens/HomeScreen/new_list_screen.dart';
+import 'package:crafty_bay/presentation/ui/screens/HomeScreen/popular_list_screen.dart';
+import 'package:crafty_bay/presentation/ui/screens/HomeScreen/special_list_screen.dart';
 import 'package:crafty_bay/presentation/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import '../widgets/home/appBar_homePage.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../../widgets/home/appBar_homePage.dart';
+import 'categories_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -48,7 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SectionHeader(
           headerText: 'Popular',
           title: 'See all',
-          onTap: () {},
+          onTap: () {
+            Get.to(()=>const PopularListScreen());
+          },
         ),
         const SizedBox(
           height: 180,
@@ -64,7 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SectionHeader(
           headerText: 'Special',
           title: 'See all',
-          onTap: () {},
+          onTap: () {
+            Get.to(()=>const SpecialListScreen());
+          },
         ),
         const SizedBox(
           height: 180,
@@ -80,7 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SectionHeader(
           headerText: 'New',
           title: 'See all',
-          onTap: () {},
+          onTap: () {
+            Get.to(()=>const NewListScreen());
+          },
         ),
         const SizedBox(
           height: 180,
@@ -96,7 +108,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SectionHeader(
           headerText: 'Categories',
           title: 'See all',
-          onTap: () {},
+          onTap: () {
+            Get.to(()=> const CategoriesListScreen());
+          },
         ),
         const SizedBox(height: 8),
         const SizedBox(

@@ -24,7 +24,7 @@ class SectionHeader extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
         ),
-        TextButton(onPressed: () {}, child: Text(title)),
+        TextButton(onPressed: onTap, child: Text(title)),
       ],
     );
   }
