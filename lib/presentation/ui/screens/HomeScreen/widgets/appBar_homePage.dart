@@ -23,6 +23,7 @@ AppBar buildAppBarHome() {
         iconData: Icons.notifications_active_outlined,
         onTap: () {},
       ),
+      const SizedBox(width: 8),
     ],
   );
 }
