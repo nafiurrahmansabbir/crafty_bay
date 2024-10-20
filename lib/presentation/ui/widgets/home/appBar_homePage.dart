@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../utils/assets_path.dart';
+import '../../utils/assets_path.dart';
 import 'appBar_icon_button.dart';
 
 AppBar buildAppBarHome() {

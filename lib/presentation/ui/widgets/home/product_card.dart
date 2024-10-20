@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/app_colors.dart';
-import '../../../utils/assets_path.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/assets_path.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
