@@ -2,21 +2,21 @@ import 'package:crafty_bay/presentation/ui/widgets/category_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/home/product_card.dart';
+import '../widgets/home/product_card.dart';
 
-class SpecialListScreen extends StatefulWidget {
-  const SpecialListScreen({super.key});
+class PopularListScreen extends StatefulWidget {
+  const PopularListScreen({super.key});
 
   @override
-  State<SpecialListScreen> createState() => _SpecialListScreenState();
+  State<PopularListScreen> createState() => _PopularListScreenState();
 }
 
-class _SpecialListScreenState extends State<SpecialListScreen> {
+class _PopularListScreenState extends State<PopularListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Special'),
+        title: const Text('Popular'),
       ),
       body:
       GridView.builder(

@@ -1,5 +1,8 @@
+import 'package:crafty_bay/presentation/ui/screens/product_details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../utils/app_colors.dart';
 import '../../utils/assets_path.dart';
@@ -16,18 +19,23 @@ class ProductCard extends StatelessWidget {
         width: 120,
         child: Column(
           children: [
-            Container(
-              width: 120,
-              height: 100,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                  color: AppColors.themeColor.withOpacity(0.1),
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(8),
-                    topRight: Radius.circular(8),
-                  ),
-                  image: const DecorationImage(
-                      image: AssetImage(AssetsPath.dummyShoe))),
+            GestureDetector(
+              onTap: (){
+                Get.to(()=>const ProductDetailsScreen());
+              },
+              child: Container(
+                width: 120,
+                height: 100,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                    color: AppColors.themeColor.withOpacity(0.1),
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(8),
+                      topRight: Radius.circular(8),
+                    ),
+                    image: const DecorationImage(
+                        image: AssetImage(AssetsPath.dummyShoe))),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

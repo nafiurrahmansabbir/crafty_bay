@@ -2,24 +2,23 @@ import 'package:crafty_bay/presentation/ui/widgets/category_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/home/product_card.dart';
+import '../widgets/home/product_card.dart';
 
-class PopularListScreen extends StatefulWidget {
-  const PopularListScreen({super.key});
+class NewListScreen extends StatefulWidget {
+  const NewListScreen({super.key});
 
   @override
-  State<PopularListScreen> createState() => _PopularListScreenState();
+  State<NewListScreen> createState() => _NewListScreenState();
 }
 
-class _PopularListScreenState extends State<PopularListScreen> {
+class _NewListScreenState extends State<NewListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Popular'),
+        title: const Text('New'),
       ),
-      body:
-      GridView.builder(
+      body: GridView.builder(
           itemCount: 10,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,

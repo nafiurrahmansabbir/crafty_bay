@@ -1,12 +1,12 @@
-import 'package:crafty_bay/presentation/ui/screens/HomeScreen/new_list_screen.dart';
-import 'package:crafty_bay/presentation/ui/screens/HomeScreen/popular_list_screen.dart';
-import 'package:crafty_bay/presentation/ui/screens/HomeScreen/special_list_screen.dart';
+import 'package:crafty_bay/presentation/state_holder/bottom_nav_bar_controller.dart';
+import 'package:crafty_bay/presentation/ui/screens/new_list_screen.dart';
+import 'package:crafty_bay/presentation/ui/screens/popular_list_screen.dart';
+import 'package:crafty_bay/presentation/ui/screens/special_list_screen.dart';
 import 'package:crafty_bay/presentation/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import '../../widgets/home/appBar_homePage.dart';
-import 'categories_list_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
           headerText: 'Categories',
           title: 'See all',
           onTap: () {
-            Get.to(()=> const CategoriesListScreen());
+            Get.find<BottomNavBarController>().selectCategory();
           },
         ),
         const SizedBox(height: 8),
@@ -121,9 +121,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  @override
-  void dispose() {
-    _searchTEController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _searchTEController.dispose();
+  //   super.dispose();
+  // }
 }
