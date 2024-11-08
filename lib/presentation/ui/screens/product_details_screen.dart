@@ -1,6 +1,9 @@
+import 'package:crafty_bay/presentation/ui/screens/review_screen.dart';
 import 'package:crafty_bay/presentation/ui/utils/app_colors.dart';
 import 'package:crafty_bay/presentation/ui/widgets/size_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:item_count_number_button/item_count_number_button.dart';
 
 import '../widgets/color_picker.dart';
@@ -100,7 +103,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ],
         ),
         const SizedBox(width: 5),
-        TextButton(onPressed: () {}, child: const Text('Reviews')),
+        TextButton(
+          onPressed: GoToReviewsScreen,
+          child: const Text('Reviews'),
+        ),
         const SizedBox(width: 5),
         Card(
           color: AppColors.themeColor,
@@ -120,7 +126,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
   Widget _buildSizePicker() {
     return SizePicker(
-      sizes: const ['M', 'L', 'X', 'Xl', 'XXl'],
+      sizes: const ['M', 'L', 'X', 'XL', 'XXL'],
       onSizeSelected: (String selectedSize) {},
     );
   }
@@ -169,12 +175,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           )),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [_buildPriceSection(context), _buildAddToCardButton()],
+        children: [_buildPriceSection(), _buildAddToCardButton()],
       ),
     );
   }
 
-  Widget _buildPriceSection(BuildContext context) {
+  Widget _buildPriceSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -195,5 +201,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         width: 140,
         child:
             ElevatedButton(onPressed: () {}, child: const Text('Add To Card')));
+  }
+
+  void GoToReviewsScreen() {
+    if (mounted) {
+      Get.to(() => const ReviewScreen());
+    }
   }
 }

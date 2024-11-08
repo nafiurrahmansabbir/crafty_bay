@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import 'card_screen.dart';
+
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});
 
@@ -21,10 +23,10 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
       Get.find<BottomNavBarController>();
 
   final List<Widget> _screens = [
-    HomeScreen(),
-    CategoriesListScreen(),
-    OTPVerificationScreen(),
-    WishListScreen(),
+    const HomeScreen(),
+    const CategoriesListScreen(),
+    const CardScreen(),
+    const WishListScreen(),
   ];
 
   @override

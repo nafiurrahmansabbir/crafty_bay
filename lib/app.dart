@@ -1,4 +1,3 @@
-
 import 'package:crafty_bay/controller_binder.dart';
 import 'package:crafty_bay/presentation/ui/screens/splash_screen.dart';
 import 'package:crafty_bay/presentation/ui/utils/app_colors.dart';

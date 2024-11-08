@@ -19,13 +19,12 @@ class _CategoriesListScreenState extends State<CategoriesListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Categories'),
-        leading: IconButton(onPressed: (){
-          Get.find<BottomNavBarController>().backToHome();
-        }, icon: const Icon(Icons.arrow_back_ios),
+        leading: IconButton(
+          onPressed: backToHome,
+          icon: const Icon(Icons.arrow_back_ios),
         ),
       ),
-      body:
-      GridView.builder(
+      body: GridView.builder(
           itemCount: 21,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
@@ -38,5 +37,9 @@ class _CategoriesListScreenState extends State<CategoriesListScreen> {
             );
           }),
     );
+  }
+
+  void backToHome() {
+    Get.find<BottomNavBarController>().backToHome();
   }
 }
