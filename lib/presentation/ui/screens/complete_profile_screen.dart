@@ -93,6 +93,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                       return 'Enter your mobile number';
                     }
                     return null;
+
                   },
                 ),
                 const SizedBox(height: 16),
