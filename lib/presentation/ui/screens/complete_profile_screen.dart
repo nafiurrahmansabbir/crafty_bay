@@ -1,5 +1,8 @@
+import 'package:crafty_bay/presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:crafty_bay/presentation/ui/widgets/app_logo_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({super.key});
@@ -40,7 +43,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   'Get start with us with your details',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
+                        color: Colors.black,
                       ),
                 ),
                 const SizedBox(height: 16),
@@ -65,7 +68,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     hintText: 'Last Name',
                   ),
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
+                        color: Colors.black,
                       ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (String? value) {
@@ -81,7 +84,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   controller: _mobileTEController,
                   decoration: const InputDecoration(hintText: 'Mobile'),
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
+                        color: Colors.black,
                       ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   keyboardType: TextInputType.number,
@@ -90,6 +93,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                       return 'Enter your mobile number';
                     }
                     return null;
+
                   },
                 ),
                 const SizedBox(height: 16),
@@ -115,7 +119,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   decoration:
                       const InputDecoration(hintText: 'Shipping Address'),
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
+                        color: Colors.black,
                       ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   maxLines: 4,
@@ -134,6 +138,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       //ToDo Valid hoile kaj koro nnaile muri khu
+                      Get.offAll(()=>const MainBottomNavScreen());
                     }
                   },
                   child: const Text('Next'),
