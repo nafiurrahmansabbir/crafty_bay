@@ -102,7 +102,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   controller: _cityTEController,
                   decoration: const InputDecoration(hintText: 'City'),
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
+                        color: Colors.black,
                       ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (String? value) {
