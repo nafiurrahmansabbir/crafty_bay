@@ -103,7 +103,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
 
   void _onTapCompleteProfileScreen() {
     if (mounted) {
-      Get.to(() => const CompleteProfileScreen());
+      Get.offAll(() =>  const CompleteProfileScreen());
     }
   }
 
