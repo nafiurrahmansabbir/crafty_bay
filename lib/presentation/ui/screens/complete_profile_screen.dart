@@ -1,5 +1,8 @@
+import 'package:crafty_bay/presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:crafty_bay/presentation/ui/widgets/app_logo_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({super.key});
@@ -64,9 +67,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   decoration: const InputDecoration(
                     hintText: 'Last Name',
                   ),
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
-                      ),
+                  style: Theme.of(context).textTheme.bodyLarge,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (String? value) {
                     if (value?.trim().isEmpty ?? true) {
@@ -80,9 +81,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   textInputAction: TextInputAction.next,
                   controller: _mobileTEController,
                   decoration: const InputDecoration(hintText: 'Mobile'),
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
-                      ),
+                  style: Theme.of(context).textTheme.bodyLarge,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   keyboardType: TextInputType.number,
                   validator: (String? value) {
@@ -97,9 +96,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   textInputAction: TextInputAction.next,
                   controller: _cityTEController,
                   decoration: const InputDecoration(hintText: 'City'),
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
-                      ),
+                  style: Theme.of(context).textTheme.bodyLarge,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (String? value) {
                     if (value?.trim().isEmpty ?? true) {
@@ -114,9 +111,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   controller: _shippingAddressTEController,
                   decoration:
                       const InputDecoration(hintText: 'Shipping Address'),
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black45,
-                      ),
+                  style: Theme.of(context).textTheme.bodyLarge,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   maxLines: 4,
                   validator: (String? value) {
@@ -134,6 +129,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       //ToDo Valid hoile kaj koro nnaile muri khu
+                      _homeScreen();
                     }
                   },
                   child: const Text('Next'),
@@ -145,7 +141,11 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
       ),
     );
   }
-
+void _homeScreen(){
+    if(mounted){
+      Get.offAll(()=>const MainBottomNavScreen());
+    }
+}
   @override
   void dispose() {
     _firstNameTEController.dispose();
