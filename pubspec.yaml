@@ -25,6 +25,7 @@ dependencies:
   fluttertoast: ^8.2.8
   carousel_slider: ^5.0.0
   item_count_number_button: ^1.9.2
+  logger: ^2.5.0
 
 dev_dependencies:
   flutter_test:
