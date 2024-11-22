@@ -1,14 +1,14 @@
 import 'package:crafty_bay/presentation/state_holder/bottom_nav_bar_controller.dart';
+import 'package:crafty_bay/presentation/state_holder/categories_list_controller.dart';
 import 'package:crafty_bay/presentation/ui/screens/categories_list_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/home_screen.dart';
-import 'package:crafty_bay/presentation/ui/screens/email_verification_screen.dart';
-import 'package:crafty_bay/presentation/ui/screens/otp_verification_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/wishilst_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../state_holder/slider_list_controller.dart';
 import 'card_screen.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
@@ -19,6 +19,15 @@ class MainBottomNavScreen extends StatefulWidget {
 }
 
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Get.find<SliderListController>().getSliderList();
+    Get.find<CategoriesListController>().getCategoriesList();
+  }
+
   final BottomNavBarController _navBarController =
       Get.find<BottomNavBarController>();
 

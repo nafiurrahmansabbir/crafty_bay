@@ -1,12 +1,13 @@
 import 'package:crafty_bay/presentation/state_holder/bottom_nav_bar_controller.dart';
+import 'package:crafty_bay/presentation/state_holder/categories_list_controller.dart';
 import 'package:crafty_bay/presentation/ui/screens/new_list_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/popular_list_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/special_list_screen.dart';
+import 'package:crafty_bay/presentation/ui/widgets/center_circular_progress_indicator.dart';
 import 'package:crafty_bay/presentation/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -55,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           headerText: 'Popular',
           title: 'See all',
           onTap: () {
-            Get.to(()=>const PopularListScreen());
+            Get.to(() => const PopularListScreen());
           },
         ),
         const SizedBox(
@@ -73,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
           headerText: 'Special',
           title: 'See all',
           onTap: () {
-            Get.to(()=>const SpecialListScreen());
+            Get.to(() => const SpecialListScreen());
           },
         ),
         const SizedBox(
@@ -91,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
           headerText: 'New',
           title: 'See all',
           onTap: () {
-            Get.to(()=>const NewListScreen());
+            Get.to(() => const NewListScreen());
           },
         ),
         const SizedBox(
@@ -113,17 +114,26 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         const SizedBox(height: 8),
-        const SizedBox(
-          height: 120,
-          child: HorizontalCategoriesListView(),
+        SizedBox(
+          height:220,
+          child: GetBuilder<CategoriesListController>(
+              builder: (categoriesListController) {
+            return Visibility(
+              visible: !categoriesListController.inProgress,
+              replacement: const CenterCircularProgressIndicator(),
+              child: HorizontalCategoriesListView(
+                categoryList: categoriesListController.categoriesList,
+              ),
+            );
+          }),
         ),
       ],
     );
   }
 
-  // @override
-  // void dispose() {
-  //   _searchTEController.dispose();
-  //   super.dispose();
-  // }
+// @override
+// void dispose() {
+//   _searchTEController.dispose();
+//   super.dispose();
+// }
 }
