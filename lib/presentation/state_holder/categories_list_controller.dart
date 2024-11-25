@@ -28,7 +28,7 @@ class CategoriesListController extends GetxController {
       _errorMessage = null;
       _categoriesList = CategoriesListModel.fromJson(response.responseData).categoriesList??[];
     } else {
-      _errorMessage = response.errorMassage;
+      _errorMessage = response.errorMessage;
     }
     //
     _inProgress = false;

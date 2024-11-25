@@ -27,7 +27,7 @@ class SliderListController extends GetxController {
       _errorMessage = null;
       _sliderList = SliderListModel.fromJson(response.responseData).sliderList ?? [];
     } else {
-      _errorMessage = response.errorMassage;
+      _errorMessage = response.errorMessage;
     }
     _inProgress = false;
     update();

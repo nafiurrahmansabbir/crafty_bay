@@ -1,7 +1,10 @@
 import 'package:crafty_bay/data/services/network_caller.dart';
 import 'package:crafty_bay/presentation/state_holder/bottom_nav_bar_controller.dart';
 import 'package:crafty_bay/presentation/state_holder/categories_list_controller.dart';
+import 'package:crafty_bay/presentation/state_holder/new_product_list_controller.dart';
+import 'package:crafty_bay/presentation/state_holder/popular_product_list_controller.dart';
 import 'package:crafty_bay/presentation/state_holder/slider_list_controller.dart';
+import 'package:crafty_bay/presentation/state_holder/special_product_list_controller.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 
@@ -14,6 +17,9 @@ class ControllerBinder extends Bindings{
     //all Controller Binding:
     Get.lazyPut(()=>SliderListController());
     Get.lazyPut(()=>CategoriesListController());
+    Get.lazyPut(()=>NewProductListController());
+    Get.lazyPut(()=>SpecialProductListController());
+    Get.lazyPut(()=>PopularProductListController());
 
   }
 }

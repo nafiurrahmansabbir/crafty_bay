@@ -39,7 +39,7 @@ class NetworkCaller {
       return NetworkResponse(
         isSuccess: false,
         statusCode: -1,
-        errorMassage: e.toString(),
+        errorMessage: e.toString(),
       );
     }
   }
@@ -79,7 +79,7 @@ class NetworkCaller {
       return NetworkResponse(
         isSuccess: false,
         statusCode: -1,
-        errorMassage: e.toString(),
+        errorMessage: e.toString(),
       );
     }
   }

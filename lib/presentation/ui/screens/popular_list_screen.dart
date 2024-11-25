@@ -28,7 +28,7 @@ class _PopularListScreenState extends State<PopularListScreen> {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(top: 16),
-              child: ProductCard(),
+              // child: ProductCard(),
             );
           }),
     );

@@ -28,7 +28,7 @@ class _SpecialListScreenState extends State<SpecialListScreen> {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(top: 16),
-              child: ProductCard(),
+              // child: ProductCard(),
             );
           }),
     );
